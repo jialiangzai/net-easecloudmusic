@@ -14,7 +14,7 @@
 							<text>{{item.updateFrequency}}</text>
 						</view>
 						<view class="index-list-text">
-							<view v-for="(musicItem,index) in item.tracks" :key="index">
+							<view v-for="(musicItem,index) in item.tracks" :key="index" class="twe">
 								{{index+1}}.{{musicItem.first}}.{{musicItem.second}}
 							</view>
 						</view>
@@ -85,7 +85,7 @@
 	}
 
 	.index-list-img {
-		width: 212rpx;
+		min-width: 212rpx;
 		height: 212rpx;
 		position: relative;
 		border-radius: 30rpx;
@@ -109,5 +109,11 @@
 	.index-list-text {
 		font-size: 24rpx;
 		line-height: 66rpx;
+     overflow: hidden;
 	}
+  .twe{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
 </style>
