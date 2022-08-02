@@ -14,7 +14,7 @@ export function topList() {
 			data: {},
 			success: res => {
 				let result = res.data.list;
-				result.length = 4;
+				result.length = 4
 				for (let i = 0; i < result.length; i++) {
 					result[i].listId = listIds[i];
 				}

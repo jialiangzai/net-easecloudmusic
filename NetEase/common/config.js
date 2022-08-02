@@ -1,1 +1,1 @@
-export const baseUrl = 'https://www.codeman.ink/api';
+export const baseUrl = 'http://localhost:3000';

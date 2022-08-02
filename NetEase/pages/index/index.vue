@@ -8,15 +8,15 @@
 					<input type="text" placeholder="搜索歌曲" />
 				</view>
 				<view class="index-list">
-					<view class="index-list-item">
+					<view class="index-list-item" v-for="(item,index) in topList" :key="item.listId">
 						<view class="index-list-img">
-							<image src="../../static/wangyiyunyinyue.png" mode=""></image>
-							<text>每天更新</text>
+							<image :src="item.coverImgUrl" mode=""></image>
+							<text>{{item.updateFrequency}}</text>
 						</view>
 						<view class="index-list-text">
-							<view>1. 音乐一</view>
-							<view>1. 音乐一</view>
-							<view>1. 音乐一</view>
+							<view v-for="(musicItem,index) in item.tracks" :key="index">
+								{{index+1}}.{{musicItem.first}}.{{musicItem.second}}
+							</view>
 						</view>
 					</view>
 				</view>
@@ -27,17 +27,26 @@
 
 <script>
 	import '@/common/iconfont.css'
+	import {
+		topList
+	} from '@/common/api'
 	export default {
 		data() {
 			return {
-				title: 'Hello'
+				title: 'Hello',
+				topList: []
 			}
 		},
 		onLoad() {
-
+			this.getTopList()
 		},
 		methods: {
-
+			async getTopList() {
+				let res = await topList()
+				if (res.length > 0) {
+					this.topList = res;
+				}
+			}
 		}
 	}
 </script>
