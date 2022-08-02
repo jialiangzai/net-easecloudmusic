@@ -28,7 +28,7 @@ export function topList() {
 	});
 }
 /**
- * 根据首页歌曲模块获取具体歌单
+ * 根据首页歌曲模块获取具体歌单---曲线救国这样就可以再不登录的情况下拿到自己想要的榜单数据
  * @param {列表id} listId
  */
 export function list(listId) {

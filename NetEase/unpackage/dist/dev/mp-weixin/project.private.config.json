@@ -4,5 +4,18 @@
   "setting": {
     "compileHotReLoad": true,
     "urlCheck": false
+  },
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "list",
+          "pathName": "pages/list/list",
+          "query": "listId=3779629",
+          "launchMode": "default",
+          "scene": null
+        }
+      ]
+    }
   }
 }
