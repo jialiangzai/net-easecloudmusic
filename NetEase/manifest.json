@@ -58,7 +58,8 @@
 			"minified": true
 		},
 		"usingComponents": true,
-    "requiredBackgroundModes":["audio"]
+    "requiredBackgroundModes":["audio"],
+    "lazyCodeLoading": "requiredComponents"
 	},
 	"mp-alipay": {
 		"usingComponents": true
