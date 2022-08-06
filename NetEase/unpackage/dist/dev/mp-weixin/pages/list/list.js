@@ -263,7 +263,8 @@ __webpack_require__(/*! ../../common/iconfont.css */ 12);var musichead = functio
         creator: '' },
 
       privileges: [],
-      isShow: false };
+      isShow: false,
+      isShowLoading: true };
 
   },
   components: {
@@ -279,6 +280,7 @@ __webpack_require__(/*! ../../common/iconfont.css */ 12);var musichead = functio
         _this.playlist = res[1].data.playlist;
         _this.privileges = res[1].data.privileges;
         _this.isShow = true;
+        _this.isShowLoading = false;
         uni.hideLoading();
         // this.$store.commit('INIT_CHANGE', this.playlist.trackIds);
       }

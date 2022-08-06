@@ -2,7 +2,7 @@
 	<view class="detail">
 		<view class="flexbg" :style="{backgroundImage:'url('+ songDetail.al.picUrl +')'}"></view>
 		<musichead :title="songDetail.name" :icon="true" color="white"></musichead>
-		<view class="container">
+		<view class="container" v-show="!isShowLoading">
 			<scroll-view scroll-y="true">
 				<view class="detail-play " @tap="handleToPlay">
 					<image :src="songDetail.al.picUrl" :class="{ 'detail-play-run' : isplayrotate }" mode=""></image>
@@ -102,7 +102,8 @@
 				songLyric : [],
 				lyricIndex : 0,
 				playicon : 'iconpause',
-				isplayrotate : true
+				isplayrotate : true,
+        isShowLoading:true
 			}
 		},
 		onLoad(options){
@@ -122,6 +123,9 @@
 		},
 		methods: {
 			playMusic(songId){
+        uni.showLoading({
+          title:"加载中"
+        })
 				// this.$store.commit('NEXT_ID',songId);
 				Promise.all([songDetail(songId),songSimi(songId),songComment(songId),songLyric(songId),songUrl(songId)]).then((res)=>{
 					if(res[0][1].data.code == '200'){
@@ -171,6 +175,8 @@
 						});
 					}
 				});
+        this.isShowLoading = false
+        uni.hideLoading();
 			},
 			formatTimeToSec(time){
 				var arr = time.split(':');

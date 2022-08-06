@@ -2,7 +2,7 @@
 	<view class="list">
 		<view class="flexbg" :style="{'background-image':'url('+ playlist.coverImgUrl +')'}"></view>
 		<musichead title="歌单" :icon="true" color="white"></musichead>
-		<view class="container">
+		<view class="container" v-show="!isShowLoading">
 			<scroll-view scroll-y="true">
 				<view class="list-head">
 					<view class="list-head-img">
@@ -77,7 +77,8 @@
 					creator: ''
 				},
 				privileges: [],
-				isShow: false
+				isShow: false,
+        isShowLoading:true
 			}
 		},
 		components: {
@@ -93,6 +94,7 @@
 					this.playlist = res[1].data.playlist;
 					this.privileges = res[1].data.privileges;
 					this.isShow = true;
+          this.isShowLoading = false
 					uni.hideLoading();
 					// this.$store.commit('INIT_CHANGE', this.playlist.trackIds);
 				}
