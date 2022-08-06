@@ -7,9 +7,13 @@
           <text class="iconfont iconsearch"></text>
           <input type="text" placeholder="搜索歌曲" />
         </view>
-        <view class="index-list">
-          <view class="index-list-item" v-for="(item,index) in topList" :key="item.id"
-            @tap="handleToList(item.id)">
+        <view v-if="isLoading">
+          <m-for-skeleton :avatarSize="200" :row="3" :loading="isLoading" isarc="square" v-for="(item,key) in 4"
+            :key="key" :titleStyle="{}">
+          </m-for-skeleton>
+        </view>
+        <view class="index-list" v-else>
+          <view class="index-list-item" v-for="(item,index) in topList" :key="item.id" @tap="handleToList(item.id)">
             <view class="index-list-img">
               <image :src="item.coverImgUrl" mode=""></image>
               <text>{{item.updateFrequency}}</text>
@@ -27,6 +31,8 @@
 </template>
 
 <script>
+  // 导入组件
+  import mForSkeleton from "@/components/m-for-skeleton/m-for-skeleton";
   import '@/common/iconfont.css'
   import {
     topList
@@ -35,7 +41,8 @@
     data() {
       return {
         title: 'Hello',
-        topList: []
+        topList: [],
+        isLoading: true
       }
     },
     onLoad() {
@@ -58,6 +65,9 @@
         let res = await topList()
         if (res.length > 0) {
           this.topList = res;
+          setTimeout(()=>{
+          this.isLoading = false
+          },1600)
         }
       }
     }
