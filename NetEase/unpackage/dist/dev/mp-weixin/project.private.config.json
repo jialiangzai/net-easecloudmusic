@@ -9,9 +9,9 @@
     "miniprogram": {
       "list": [
         {
-          "name": "list",
-          "pathName": "pages/list/list",
-          "query": "listId=3779629",
+          "name": "详情页",
+          "pathName": "/pages/detail/detail",
+          "query": "songId=1969061662",
           "launchMode": "default",
           "scene": null
         }

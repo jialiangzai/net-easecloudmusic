@@ -9,6 +9,9 @@
     "es6": true,
     "postcss": true,
     "minified": true,
+    "requireBackgroudModes": [
+      "audio"
+    ],
     "babelSetting": {
       "ignore": [],
       "disablePlugins": [],
