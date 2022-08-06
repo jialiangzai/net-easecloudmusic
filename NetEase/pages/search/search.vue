@@ -66,7 +66,7 @@
 				</block>
 				<block v-else-if="searchType == 3">
 					<view class="search-suggest">
-						<view class="search-suggest-title">搜索"{{ this.searchWord }}"</view>
+						<view class="search-suggest-title">搜索： {{searchWord }}</view>
 						<!-- <view class="search-suggest-item">
 							<text class="iconfont iconsearch"></text>
 							少年抖音
@@ -156,6 +156,7 @@
 				});
 			},
 			handleToWord(word){
+        console.log('word',word);
 				this.searchWord = word;
 				this.handleToSearch();
 			},

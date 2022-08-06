@@ -109,7 +109,7 @@ var components
 try {
   components = {
     musichead: function() {
-      return __webpack_require__.e(/*! import() | components/musichead/musichead */ "components/musichead/musichead").then(__webpack_require__.bind(null, /*! @/components/musichead/musichead.vue */ 52))
+      return __webpack_require__.e(/*! import() | components/musichead/musichead */ "components/musichead/musichead").then(__webpack_require__.bind(null, /*! @/components/musichead/musichead.vue */ 54))
     }
   }
 } catch (e) {
