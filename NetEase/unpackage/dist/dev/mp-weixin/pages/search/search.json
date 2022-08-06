@@ -2,5 +2,7 @@
   "navigationBarTitleText": "搜索歌曲",
   "enablePullDownRefresh": false,
   "navigationStyle": "custom",
-  "usingComponents": {}
+  "usingComponents": {
+    "musichead": "/components/musichead/musichead"
+  }
 }

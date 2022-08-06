@@ -9,9 +9,6 @@
     "es6": true,
     "postcss": true,
     "minified": true,
-    "requireBackgroudModes": [
-      "audio"
-    ],
     "babelSetting": {
       "ignore": [],
       "disablePlugins": [],
@@ -22,7 +19,27 @@
   "libVersion": "2.25.2",
   "appid": "wxf372bec0097c5872",
   "projectname": "NetEase",
-  "condition": {},
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "list",
+          "pathName": "pages/list/list",
+          "query": "listId=3"
+        },
+        {
+          "name": "detail",
+          "pathName": "pages/detail/detail",
+          "query": "songId=483937795"
+        },
+        {
+          "name": "search",
+          "pathName": "pages/search/search",
+          "query": ""
+        }
+      ]
+    }
+  },
   "editorSetting": {
     "tabIndent": "insertSpaces",
     "tabSize": 2
