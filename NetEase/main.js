@@ -1,4 +1,5 @@
 import App from './App'
+import store from './store/index.js'
 import '@/common/iconfont.css'
 // #ifndef VUE3
 import Vue from 'vue'
@@ -27,7 +28,8 @@ Vue.filter('formatTime',function(value){
 	
 });
 const app = new Vue({
-    ...App
+    ...App,
+    store
 })
 app.$mount()
 // #endif
@@ -37,7 +39,8 @@ import { createSSRApp } from 'vue'
 export function createApp() {
   const app = createSSRApp(App)
   return {
-    app
+    app,
+    store
   }
 }
 // #endif

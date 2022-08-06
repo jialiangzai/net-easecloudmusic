@@ -126,7 +126,7 @@
         uni.showLoading({
           title:"加载中"
         })
-				// this.$store.commit('NEXT_ID',songId);
+				this.$store.commit('NEXT_ID',songId);
 				Promise.all([songDetail(songId),songSimi(songId),songComment(songId),songLyric(songId),songUrl(songId)]).then((res)=>{
 					if(res[0][1].data.code == '200'){
 						this.songDetail = res[0][1].data.songs[0];

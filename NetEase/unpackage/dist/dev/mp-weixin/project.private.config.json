@@ -4,18 +4,5 @@
   "setting": {
     "compileHotReLoad": true,
     "urlCheck": false
-  },
-  "condition": {
-    "miniprogram": {
-      "list": [
-        {
-          "name": "详情页",
-          "pathName": "/pages/detail/detail",
-          "query": "songId=1969061662",
-          "launchMode": "default",
-          "scene": null
-        }
-      ]
-    }
   }
 }
